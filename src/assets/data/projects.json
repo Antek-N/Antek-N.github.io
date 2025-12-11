@@ -1,0 +1,75 @@
+[
+  {
+    "id": "mapories",
+    "name": "Mapories",
+    "icon": "mapories.png",
+    "preview": "mapories.gif",
+    "description": "A full-stack geospatial memory journal allowing users to anchor stories to specific coordinates. Optimized for high-density data using server-side PostGIS bounding-box queries and frontend marker clustering. Features a defense-in-depth security architecture with HTTP-only cookie-based JWT authentication, IP rate limiting (SlowAPI), and automated bot protection (reCAPTCHA & honeypots).",
+    "technologies": ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL & PostGIS", "SQLAlchemy & GeoAlchemy2", "Leaflet", "Tailwind CSS", "SlowAPI", "Pydantic"],
+    "repoUrl": "https://github.com/Antek-N/Mapories"
+  },
+  {
+    "id": "rail-network-graph",
+    "name": "Rail Network Graph",
+    "icon": "rail_network_graph.png",
+    "preview": "railnetworkgraph.gif",
+    "description": "Desktop application for railway connection search and network visualization. Integrates GTFS schedules with geospatial railway data to build a time-expanded navigation graph. Features an interactive interface (CustomTkinter + Matplotlib) for route planning, exact distance calculation via KD-Tree snapping, and dynamic ticket pricing.",
+    "technologies": ["Python", "CustomTkinter", "Matplotlib", "Shapely", "Pandas & GeoPandas", "NumPy", "NetworkX", "Algorithms", "CI/CD", "poetry", "mkdocs", "black/ruff/mypy"],
+    "repoUrl": "https://github.com/Antek-N/RailNetworkGraph"
+  },
+  {
+    "id": "passes_per_minute",
+    "name": "Passes Per Minute",
+    "icon": "passes_per_minute.png",
+    "preview": "passes_per_minute.gif",
+    "description": "Data analysis tool providing football metrics (passes per minute by position) using StatsBomb Open Data. Features a Streamlit dashboard with pitch visualizations and utilizes multithreading for high-performance concurrent data fetching.",
+    "technologies": ["Python", "Streamlit", "Matplotlib", "PyTest", "StatsBomb Data", "Multithreading", "CI/CD", "poetry", "mkdocs", "black/ruff/mypy"],
+    "repoUrl": "https://github.com/Antek-N/PassesPerMinute",
+    "demoUrl": "https://passesperminute.streamlit.app/"
+  },
+  {
+    "id": "speechscan",
+    "name": "SpeechScan",
+    "icon": "speechscan.png",
+    "preview": "speechscan.gif",
+    "description": "A desktop application that transcribes audio and analyzes word frequency from MP3 files and YouTube videos. Built with Python and PyQt5, it employs a multithreaded architecture (QThread) to ensure a responsive UI during asynchronous operations like media downloading (using yt-dlp) and cloud-based transcription via the AssemblyAI API.",
+    "technologies": ["Python", "PyQt5", "AssemblyAI API", "yt-dlp", "Multithreading", "Requests", "CI/CD", "poetry", "mkdocs", "black/ruff/mypy"],
+    "repoUrl": "https://github.com/Antek-N/SpeechScan"
+  },
+  {
+    "id": "data-transfer",
+    "name": "DataTransfer",
+    "icon": "data_transfer.png",
+    "preview": "data-transfer.png",
+    "description": "A cross-platform productivity tool enabling instant text transfer from Windows to Android. Features a stealthy system tray application with custom slide animations built in PyQt5, paired with a native Android client. Powered by Firebase Cloud Messaging (FCM) for real-time delivery.",
+    "technologies": ["Python", "PyQt5", "Java (Android)", "Firebase FCM"],
+    "repoUrl": "https://github.com/Antek-N/DataTransfer"
+  },
+  {
+    "id": "maze-game",
+    "name": "Maze Game",
+    "icon": "maze_game.png",
+    "preview": "mazegame.gif",
+    "description": "An interactive arcade maze game developed with Pygame. Features a robust user authentication system backed by SQLite for tracking personal and global leaderboards. Implements precise collision detection, multiple level definitions, and a custom UI system using pygame-menu.",
+    "technologies": ["Python", "Pygame", "SQLite", "Pygame-menu", "CI/CD", "Algorithms", "poetry", "mkdocs", "black/ruff/mypy"],
+    "repoUrl": "https://github.com/Antek-N/Maze-game"
+  },
+  {
+    "id": "notepadark",
+    "name": "Notepadark",
+    "icon": "notepadark.png",
+    "preview": "notepadark.gif",
+    "description": "A dark-themed desktop text editor built with Python and Tkinter. Distinguished by a clean UI with smart, auto-hiding scrollbars that vanish when content fits the window. Features include robust file management with autosave, a comprehensive find/replace tool, and dynamic zoom functionality.",
+    "technologies": ["Python", "Tkinter", "Pytest", "CI/CD", "poetry", "mkdocs", "black/ruff/mypy"],
+    "repoUrl": "https://github.com/Antek-N/Notepadark"
+  },
+  {
+    "id": "portfolio-gallery",
+    "name": "Portfolio Gallery",
+    "icon": "portfolio_gallery.png",
+    "preview": "portfolio-gallery.gif",
+    "description": "A modern, responsive portfolio dashboard built with React and Vite. It dynamically renders project tiles from JSON data using a modular component architecture. Features include a 'smart' preview system that calculates viewport positioning to prevent clipping, strict TypeScript typing, and polished Tailwind CSS animations.",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite", "React Helmet", "json"],
+    "repoUrl": "https://github.com/Antek-N/Portfolio-Gallery"
+  }
+]
