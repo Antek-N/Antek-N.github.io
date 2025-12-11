@@ -1,0 +1,31 @@
+{
+  "username": "Antoni-N",
+  "location": "Wrocław / Remote",
+  "openToWork": true,
+  "socials": {
+    "github": "https://github.com/Antek-N",
+    "linkedin": "https://www.linkedin.com/in/antoni-nikolajdu-934566399/",
+    "email": "nikolajdu.antoni@gmail.com"
+  },
+  "cvUrl": "/assets/cv.pdf",
+  "techStack": [
+    "Python",
+    "C++",
+    "PyQt5",
+    "Pandas",
+    "GeoPandas",
+    "NumPy",
+    "PostgreSQL",
+    "PostGIS",
+    "ArcGIS",
+    "FastAPI",
+    "Alembic",
+    "Matplotlib",
+    "CLIP (OpenAI)",
+    "Pytest",
+    "Git",
+    "Poetry",
+    "Black/Ruff/Mypy",
+    "CI/CD"
+  ]
+}
