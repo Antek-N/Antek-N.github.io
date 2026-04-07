@@ -7,8 +7,18 @@ const icons = import.meta.glob('../assets/icons/*', {
   import: 'default',
 }) as Record<string, string>;
 
-// Dynamically import all files from the 'screens' directory (for previews).
-const screens = import.meta.glob('../assets/screens/*', {
+// Dynamically import all preview assets (webm/mp4/webp).
+const previewWebms = import.meta.glob('../assets/previews/webm/*', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>;
+
+const previewMp4s = import.meta.glob('../assets/previews/mp4/*', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>;
+
+const previewWebps = import.meta.glob('../assets/previews/webp/*', {
   eager: true,
   import: 'default',
 }) as Record<string, string>;
@@ -17,8 +27,22 @@ const screens = import.meta.glob('../assets/screens/*', {
 export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   const iconSrc = icons[`../assets/icons/${project.icon}`];  // Construct the source path for the project icon
 
-  const previewPath = `../assets/screens/${project.preview}`;  // Construct the path and source for the project preview image (screen)
-  const previewSrc = project.preview ? screens[previewPath] : null;  // Only load the preview source if a preview filename is provided
+  const previewKey = project.preview?.trim() || "";
+
+  const previewWebmSrc = previewKey
+      ? previewWebms[`../assets/previews/webm/${previewKey}.webm`]
+      : null;
+
+  const previewMp4Src = previewKey
+      ? previewMp4s[`../assets/previews/mp4/${previewKey}.mp4`]
+      : null;
+
+  const previewWebpSrc = previewKey
+      ? previewWebps[`../assets/previews/webp/${previewKey}.webp`]
+      : null;
+
+  const hasPreview = Boolean(previewWebmSrc || previewMp4Src || previewWebpSrc);
+  const isVideoPreview = Boolean(previewWebmSrc || previewMp4Src);
 
   const [showPreview, setShowPreview] = useState(false);  // State to control visibility of the preview popup
   const [popupPosition, setPopupPosition] = useState<'top' | 'bottom'>('top');  // State to determine if the popup should appear above or below the card
@@ -32,7 +56,7 @@ export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
     if (timerRef.current) clearTimeout(timerRef.current);
 
     // If no preview image is available, stop
-    if (!previewSrc) return;
+    if (!hasPreview) return;
 
     // Set a delay before showing the preview
     timerRef.current = setTimeout(() => {
@@ -70,7 +94,7 @@ export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       >
 
         {/* Conditional rendering of the project preview popup */}
-        {showPreview && previewSrc && (
+        {showPreview && hasPreview && (
             <div
                 // Positioning the popup relative to the card, using calculated position (top/bottom)
                 className={`absolute left-1/2 -translate-x-1/2 w-72 sm:w-[400px] z-50 pointer-events-auto cursor-default
@@ -85,11 +109,29 @@ export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
 
                 {/* Preview image container with styling */}
                 <div className="rounded-xl overflow-hidden bg-slate-800 shadow-2xl shadow-black border border-indigo-500/50 p-1 relative bg-clip-padding">
-                  <img
-                      src={previewSrc}
-                      alt="Preview"
-                      className="w-full h-auto rounded-lg block"
-                  />
+                  {isVideoPreview ? (
+                      <video
+                          className="w-full h-auto rounded-lg block"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                      >
+                        {previewWebmSrc && <source src={previewWebmSrc} type="video/webm" />}
+                        {previewMp4Src && <source src={previewMp4Src} type="video/mp4" />}
+                      </video>
+                  ) : (
+                      previewWebpSrc && (
+                          <img
+                              src={previewWebpSrc}
+                              alt="Preview"
+                              className="w-full h-auto rounded-lg block"
+                              loading="lazy"
+                              decoding="async"
+                          />
+                      )
+                  )}
                   {/* Small 'Preview' label at the bottom */}
                   <div className="px-2 py-1 bg-slate-900/95 text-center border-t border-white/5">
                     <span className="text-[10px] text-indigo-300 uppercase tracking-wider font-bold">Preview</span>

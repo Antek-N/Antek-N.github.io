@@ -21,7 +21,7 @@ via **react-helmet-async**.
 
 This portfolio renders projects from JSON and displays them as
 **cards**. Each card shows an **icon**, **name**, **description**,
-**tech tags**, and links to **demo website** / **repo**. When a preview image (or gif) is available, a **hover popup** shows a framed screenshot that
+**tech tags**, and links to **demo website** / **repo**. When a preview (image or video) is available, a **hover popup** shows a framed preview that
 auto‑positions **above/below** the card based on viewport space.
 
 ------------------------------------------------------------------------
@@ -35,7 +35,7 @@ auto‑positions **above/below** the card based on viewport space.
 -   🦾 **Accessible footer** with contact, socials, and tech stack
 -   🔖 **SEO tags** via Helmet
 -   📱 **Responsive grid** (1--4 columns)
--   ⚡ **Vite + dynamic imports** for icons/screens
+-   ⚡ **Vite + dynamic imports** for icons/previews (`webm` → fallback `mp4`, or `webp`)
 -   🌗 **Dark UI** with subtle glass & glow effects
 
 ------------------------------------------------------------------------
@@ -51,7 +51,10 @@ auto‑positions **above/below** the card based on viewport space.
     │  │  │  ├─ profile.json           # Basic profile + socials
     │  │  │  └─ projects.json          # Portfolio projects
     │  │  ├─ icons/                    # Per‑project icons
-    │  │  └─ screens/                  # Per‑project preview images/gifs
+    │  │  └─ previews/                 # Per‑project previews (webm/mp4/webp)
+    │  │     ├─ webm/
+    │  │     ├─ mp4/
+    │  │     └─ webp/
     │  ├─ components/
     │  │  ├─ Header.tsx                # Header component
     │  │  ├─ Footer.tsx                # Footer component
@@ -119,8 +122,8 @@ export type Profile = {
     "id": "notepadark",
     "name": "Notepadark",
     "description": "Dark‑themed text editor with autosave, search & replace.",
-    "icon": "notepadark.svg",
-    "preview": "notepadark.png",
+    "icon": "notepadark.webp",
+    "preview": "notepadark",
     "technologies": ["Python", "Tkinter"],
     "demoUrl": "https://example.com/notepadark",
     "repoUrl": "https://github.com/you/notepadark"
@@ -129,8 +132,8 @@ export type Profile = {
     "id": "portfolio",
     "name": "Dev Portfolio",
     "description": "This site — Vite + React + TS + Tailwind.",
-    "icon": "portfolio.svg",
-    "preview": "portfolio.png",
+    "icon": "portfolio.webp",
+    "preview": "portfolio",
     "technologies": ["React", "TypeScript", "Tailwind"],
     "repoUrl": "https://github.com/you/portfolio"
   }
