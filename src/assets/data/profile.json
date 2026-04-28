@@ -11,21 +11,19 @@
   "techStack": [
     "Python",
     "C++",
-    "PyQt5",
-    "Pandas",
-    "GeoPandas",
-    "NumPy",
+    "TypeScript",
     "PostgreSQL",
     "PostGIS",
-    "ArcGIS",
+    "Pandas",
+    "GeoPandas",
+    "PyTorch",
+    "PySide6",
+    "ArcGIS Pro",
+    "React",
     "FastAPI",
-    "Alembic",
-    "Matplotlib",
-    "CLIP (OpenAI)",
-    "Pytest",
-    "Git",
     "Poetry",
-    "Black/Ruff/Mypy",
-    "CI/CD"
+    "CI/CD",
+    "Ruff/Mypy/Black",
+    "Pytest"
   ]
 }

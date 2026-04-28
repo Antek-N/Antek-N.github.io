@@ -1,5 +1,14 @@
 [
   {
+    "id": "urbanquality_ai",
+    "name": "UrbanQuality AI",
+    "icon": "urbanquality_ai.webp",
+    "preview": "urbanquality_ai",
+    "description": "An end-to-end system for quantitative urban assessment, integrating Computer Vision (DINOv2) and GIS. It provides objective analysis of spherical imagery across six psycho-social categories to eliminate planning subjectivity. Features a custom training engine (TrueSkill/Optuna) and a desktop processor for route optimization (CPP) and mass inference. Automates the pipeline from data acquisition (custom or Mapillary) to GIS-ready vector layer export.",
+    "technologies": ["Python", "PyTorch", "DINOv2 (ViT)", "OpenAI CLIP", "PySide6", "GeoPandas", "OSMnx", "Shapely", "Optuna", "TrueSkill", "Poetry", "CI/CD", "MkDocs"],
+    "repoUrl": "https://github.com/UrbanQuality-AI"
+  },
+  {
     "id": "mapories",
     "name": "Mapories",
     "icon": "mapories.webp",
